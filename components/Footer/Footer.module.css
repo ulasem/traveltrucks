@@ -1,0 +1,38 @@
+.footer {
+  padding: 16px;
+  background-color: #f0f0f0;
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+  border-top: 1px solid #ddd;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer a {
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .wrap {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+}
