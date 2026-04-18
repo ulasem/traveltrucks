@@ -12,12 +12,10 @@ export default function ReviewsList({ reviews }: ReviewsListProps) {
   }
 
   return (
-    <section className={css.listContainer}>
-      <div className={css.list}>
-        {reviews.map(item => (
-          <ReviewCard key={item.id} review={item} />
-        ))}
-      </div>
-    </section>
+    <div className={css.list}>
+      {reviews.map(item => (
+        <ReviewCard key={item.id} review={item} />
+      ))}
+    </div>
   );
 }
