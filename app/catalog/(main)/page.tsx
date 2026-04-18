@@ -1,4 +1,4 @@
-import { Metadata } from 'next'; // Імпортуємо тип
+import { Metadata } from 'next';
 import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
 import { fetchCampers } from '@/lib/api/api';
 import { Filters } from '@/types/filters';

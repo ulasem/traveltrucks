@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 import { fetchCamperById, fetchCamperReviews } from '@/lib/api/api';
 import { Camper } from '@/types/camper';
 import { Review } from '@/types/review';
 import CardDetailsClient from './CardDetails.client';
-import { Metadata } from 'next';
 
 interface CamperDetailsPageProps {
   params: Promise<{ id: string }>;
