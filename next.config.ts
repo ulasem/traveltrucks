@@ -11,9 +11,9 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'ftp.goit.study', // Додаємо цей хост для кемперів
+        hostname: 'ftp.goit.study',
         port: '',
-        pathname: '/img/**', // Шлях до картинок у цьому API
+        pathname: '/img/**',
       },
     ],
   },
