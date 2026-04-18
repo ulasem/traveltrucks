@@ -5,7 +5,7 @@ interface ErrorProps {
 }
 
 function Error({ error }: ErrorProps) {
-  return <p>{error.message}</p>;
+  return <p>Card not found! {error.message}</p>;
 }
 
 export default Error;
