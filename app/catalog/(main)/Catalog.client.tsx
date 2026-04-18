@@ -1,11 +1,11 @@
 'use client';
+import { useEffect, useState } from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { CampersResponse, fetchCampers } from '@/lib/api/api';
+import { Filters } from '@/types/filters';
+import Icon from '@/components/common/Icon';
 import CamperCard from '@/components/CamperCard/CamperCard';
 import css from './CatalogClient.module.css';
-import { Filters } from '@/types/filters';
-import { useEffect, useState } from 'react';
-import Icon from '@/components/common/Icon';
 
 interface CatalogClientProps {
   initialFilters: Filters;
@@ -14,27 +14,11 @@ interface CatalogClientProps {
 export default function CatalogClient({ initialFilters }: CatalogClientProps) {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Відстежуємо прокрутку сторінки
   useEffect(() => {
-    const handleScroll = () => {
-      // Показуємо кнопку, якщо прокрутили більше 500px
-      if (window.scrollY > 500) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-    };
-
+    const handleScroll = () => setShowScrollTop(window.scrollY > 500);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth', // Плавна прокрутка
-    });
-  };
 
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
     useInfiniteQuery<CampersResponse>({
@@ -57,7 +41,7 @@ export default function CatalogClient({ initialFilters }: CatalogClientProps) {
 
       <button
         className={`${css.scrollTop} ${showScrollTop ? css.isVisible : ''}`}
-        onClick={scrollToTop}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="Scroll to top"
       >
         <Icon id="arrow-up" size={32} />

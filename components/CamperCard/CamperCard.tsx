@@ -4,21 +4,19 @@ import Icon from '../common/Icon';
 import { Camper } from '@/types/camper';
 import css from './CamperCard.module.css';
 
-interface CamperCardProps {
-  camper: Camper;
-}
-
-export default function CamperCard({ camper }: CamperCardProps) {
+export default function CamperCard({ camper }: { camper: Camper }) {
   return (
-    <div className={css.card}>
-      <Image
-        src={camper.coverImage || ''}
-        alt={camper.name}
-        width={219}
-        height={240}
-        loading="eager"
-        className={css.image}
-      />
+    <article className={css.card}>
+      <div className={css.imageWrapper}>
+        <Image
+          src={camper.coverImage || ''}
+          alt={camper.name}
+          width={290}
+          height={310}
+          loading="eager"
+          className={css.image}
+        />
+      </div>
 
       <div className={css.content}>
         <div className={css.mainInfo}>
@@ -31,9 +29,9 @@ export default function CamperCard({ camper }: CamperCardProps) {
             <span className={css.rating}>
               <Icon id="rating-default" size={16} /> {camper.rating}({camper.totalReviews} Reviews)
             </span>
-            <span className={css.location}>
+            <address className={css.location}>
               <Icon id="map" /> {camper.location}
-            </span>
+            </address>
           </div>
         </div>
 
@@ -45,7 +43,8 @@ export default function CamperCard({ camper }: CamperCardProps) {
             {camper.engine}
           </div>
           <div className={css.badge}>
-            <Icon id="automatic" /> {camper.transmission}
+            <Icon id="automatic" />
+            {camper.transmission}
           </div>
           <div className={css.badge}>
             <Icon id="alcove" />
@@ -57,6 +56,6 @@ export default function CamperCard({ camper }: CamperCardProps) {
           Show more
         </Link>
       </div>
-    </div>
+    </article>
   );
 }
