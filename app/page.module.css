@@ -7,19 +7,24 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 64px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .hero {
     background-image:
-      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/hero-baner@2x.png'); /* Вкажіть шлях до файлу з подвійною щільністю */
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/hero-baner@2x.png');
   }
 }
 
 .container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+.wrapper {
   max-width: 600px;
-  color: white;
 }
 
 .title {
