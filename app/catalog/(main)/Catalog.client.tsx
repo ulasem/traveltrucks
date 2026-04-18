@@ -55,13 +55,12 @@ export default function CatalogClient({ initialFilters }: CatalogClientProps) {
         )}
       </div>
 
-      {/* Кнопка "Вгору" */}
       <button
         className={`${css.scrollTop} ${showScrollTop ? css.isVisible : ''}`}
         onClick={scrollToTop}
         aria-label="Scroll to top"
       >
-        <Icon id="arrow-up" size={24} />
+        <Icon id="arrow-up" size={32} />
       </button>
 
       {hasNextPage && (
