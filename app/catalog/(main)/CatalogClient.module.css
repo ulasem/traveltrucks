@@ -38,3 +38,39 @@
   font-size: 20px;
   color: var(--text);
 }
+
+.scrollTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 1px solid var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.scrollTop.isVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scrollTop:hover {
+  background-color: var(--inputs);
+  border-color: var(--green-hover);
+  transform: translateY(-5px);
+}
+
+.scrollTop svg {
+  fill: var(--green-hover);
+}
