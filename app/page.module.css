@@ -1,0 +1,65 @@
+.hero {
+  height: calc(100vh - 72px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/hero-baner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 64px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/hero-baner@2x.png'); /* Вкажіть шлях до файлу з подвійною щільністю */
+  }
+}
+
+.container {
+  max-width: 600px;
+  color: white;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 67%;
+  color: var(--inputs);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--inputs);
+  margin-bottom: 40px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--grey-green);
+  color: white;
+  padding: 16px 48px;
+  border-radius: 200px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  height: 100%;
+  max-width: 173px;
+  max-height: 56px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.button:hover {
+  background: var(--green-hover);
+}
