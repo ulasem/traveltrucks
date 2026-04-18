@@ -64,7 +64,7 @@ export default function CamperGallery({ gallery, camperName }: CamperGalleryProp
                 width={136}
                 height={144}
                 alt={`${camperName} - thumbnail`}
-                loading="lazy"
+                loading="eager"
               />
             </div>
           </SwiperSlide>

@@ -2,6 +2,7 @@
   padding: 44px 57px;
   border: 1px solid var(--gray-light);
   border-radius: 16px;
+  width: 100%;
   max-width: 641px;
 }
 

@@ -59,8 +59,6 @@ export const fetchCamperReviews = async (id: string): Promise<Review[]> => {
 export interface BookingRequest {
   name: string;
   email: string;
-  date?: string;
-  comment?: string;
 }
 
 export interface BookingResponse {
