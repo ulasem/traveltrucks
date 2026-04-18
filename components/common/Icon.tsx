@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface IconProps {
-  id: 'logo' | 'map' | 'alcove' | 'automatic' | 'petrol' | 'star'; // Ваші ID зі спрайту
+  id: 'logo' | 'map' | 'alcove' | 'automatic' | 'petrol' | 'rating' | 'rating-default';
   size?: number;
   width?: number;
   height?: number;
