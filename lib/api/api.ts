@@ -25,8 +25,10 @@ export const fetchCampers = async (params: {
   transmission?: string;
   engine?: string;
 }): Promise<CampersResponse> => {
+  const defaultParams = { perPage: 4, ...params };
+
   const filteredParams = Object.fromEntries(
-    Object.entries(params).filter(([_, value]) => value !== '' && value !== undefined),
+    Object.entries(defaultParams).filter(([_, value]) => value !== '' && value !== undefined),
   );
 
   const { data } = await api.get<CampersResponse>('/campers', {
