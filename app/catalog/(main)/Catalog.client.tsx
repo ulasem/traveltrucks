@@ -20,7 +20,7 @@ export default function CatalogClient({ initialFilters }: CatalogClientProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isSuccess } =
     useInfiniteQuery<CampersResponse>({
       queryKey: ['campers', initialFilters],
       queryFn: ({ pageParam = 1 }) =>
@@ -31,13 +31,37 @@ export default function CatalogClient({ initialFilters }: CatalogClientProps) {
       staleTime: 5000,
     });
 
+  // Перевірка, чи порожній результат після успішного запиту
+  const isEmpty = isSuccess && data?.pages[0]?.total === 0;
+
   return (
     <section className={css.catalogSection}>
-      <div className={css.list}>
-        {data?.pages.map(page =>
-          page.campers.map(camper => <CamperCard key={camper.id} camper={camper} />),
-        )}
-      </div>
+      {isEmpty ? (
+        <div className={css.emptyState}>
+          <Icon id="search" size={48} className={css.emptyIcon} />
+          <p className={css.emptyText}>
+            No campers found matching your filters. Try adjusting your search criteria!
+          </p>
+        </div>
+      ) : (
+        <>
+          <div className={css.list}>
+            {data?.pages.map(page =>
+              page.campers.map(camper => <CamperCard key={camper.id} camper={camper} />),
+            )}
+          </div>
+
+          {hasNextPage && (
+            <button
+              className={css.loadMore}
+              onClick={() => fetchNextPage()}
+              disabled={isFetchingNextPage}
+            >
+              {isFetchingNextPage ? 'Loading...' : 'Load more'}
+            </button>
+          )}
+        </>
+      )}
 
       <button
         className={`${css.scrollTop} ${showScrollTop ? css.isVisible : ''}`}
@@ -46,16 +70,6 @@ export default function CatalogClient({ initialFilters }: CatalogClientProps) {
       >
         <Icon id="arrow-up" size={32} />
       </button>
-
-      {hasNextPage && (
-        <button
-          className={css.loadMore}
-          onClick={() => fetchNextPage()}
-          disabled={isFetchingNextPage}
-        >
-          {isFetchingNextPage ? 'Loading...' : 'Load more'}
-        </button>
-      )}
     </section>
   );
 }

@@ -53,6 +53,30 @@
   fill: var(--green-hover);
 }
 
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.emptyIcon {
+  color: var(--gray);
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.emptyText {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--main);
+  max-width: 300px;
+}
+
 @media screen and (min-width: 1024px) {
   .catalogSection {
     gap: 40px;
@@ -66,5 +90,14 @@
     right: 40px;
     width: 50px;
     height: 50px;
+  }
+
+  .emptyState {
+    padding: 100px 0;
+  }
+
+  .emptyText {
+    font-size: 20px;
+    max-width: 100%;
   }
 }

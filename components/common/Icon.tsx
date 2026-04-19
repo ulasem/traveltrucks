@@ -1,7 +1,16 @@
 import React from 'react';
 
 interface IconProps {
-  id: 'logo' | 'map' | 'alcove' | 'automatic' | 'petrol' | 'rating' | 'rating-default' | 'arrow-up';
+  id:
+    | 'logo'
+    | 'map'
+    | 'alcove'
+    | 'automatic'
+    | 'petrol'
+    | 'rating'
+    | 'rating-default'
+    | 'arrow-up'
+    | 'search';
   size?: number;
   width?: number;
   height?: number;
