@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'TravelTrucks - Premium Camper Rental',
     description: 'Book a premium camper for your next trip. Wide selection.',
-    url: 'https://traveltrucks.com', // домен
+    url: 'https://traveltrucks-wheat.vercel.app',
     siteName: 'TravelTrucks',
     images: [
       {

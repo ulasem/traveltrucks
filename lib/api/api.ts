@@ -3,7 +3,7 @@ import { Review } from '@/types/review';
 import { Camper, VehicleForm, Transmission, Engine } from '@/types/camper';
 
 export const api = axios.create({
-  baseURL: `https://campers-api.goit.study`,
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
