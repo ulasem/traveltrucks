@@ -182,7 +182,7 @@ traveltrucks/
 
 ## 👤 Author & Links
 
-- **Developer**: [Your Name]
+- **Developer**: Yuliia Semochko
 - **Live Demo**: [View Project on Vercel](https://traveltrucks-wheat.vercel.app/)
 - **Repository**:
   [GitHub Link](https://www.google.com/search?q=https://github.com/ulasem/traveltrucks)
