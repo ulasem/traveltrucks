@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 650px;
+  width: 100%;
 }
 
 .headerSection,
@@ -14,14 +14,18 @@
 
 .name {
   margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--main);
 }
 
-.name,
 .sectionTitle {
   font-weight: 600;
   font-size: 24px;
-  line-height: 133%;
+  line-height: 1.33;
   color: var(--main);
+  margin-bottom: 16px;
 }
 
 .meta {
@@ -38,14 +42,14 @@
   gap: 4px;
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1.5;
   color: var(--main);
 }
 
 .price {
   font-weight: 600;
   font-size: 24px;
-  line-height: 133%;
+  line-height: 1.33;
   color: var(--main);
   margin-bottom: 24px;
 }
@@ -54,10 +58,6 @@
   font-size: 16px;
   line-height: 1.5;
   color: var(--text);
-}
-
-.sectionTitle {
-  margin-bottom: 16px;
 }
 
 .badges {
@@ -107,7 +107,7 @@
 .table td {
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1.5;
   color: var(--main);
 }
 
@@ -115,6 +115,8 @@
   color: #101828;
 }
 
-.table td:last-child {
-  text-align: right;
+@media (min-width: 1440px) {
+  .container {
+    max-width: 650px;
+  }
 }

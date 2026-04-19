@@ -14,7 +14,6 @@ export async function generateMetadata({ params }: CamperDetailsPageProps): Prom
 
   try {
     const camper = await fetchCamperById(id);
-
     if (!camper) return { title: 'Camper not found' };
 
     const title = camper.name || 'Camper Details';
@@ -25,10 +24,10 @@ export async function generateMetadata({ params }: CamperDetailsPageProps): Prom
 
     return {
       title: `${title} | CamperRental`,
-      description: description,
+      description,
       openGraph: {
-        title: title,
-        description: description,
+        title,
+        description,
         images: [{ url: mainImage }],
       },
     };
@@ -48,7 +47,6 @@ export default async function CamperDetailsPage({ params }: CamperDetailsPagePro
       fetchCamperById(id),
       fetchCamperReviews(id),
     ]);
-
     camper = camperData;
     reviews = reviewsData;
   } catch (error) {
@@ -56,13 +54,13 @@ export default async function CamperDetailsPage({ params }: CamperDetailsPagePro
     return notFound();
   }
 
-  if (!camper) {
-    return notFound();
-  }
+  if (!camper) return notFound();
 
   return (
     <main>
-      <CardDetailsClient camper={camper} reviews={reviews} />
+      <article>
+        <CardDetailsClient camper={camper} reviews={reviews} />
+      </article>
     </main>
   );
 }

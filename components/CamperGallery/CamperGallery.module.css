@@ -1,9 +1,8 @@
 .galleryWrapper {
   width: 100%;
-  max-width: 638px;
   display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 16px;
 }
 
 .mainSwiper {
@@ -55,4 +54,11 @@
 
 .thumbsSwiper :global(.swiper-slide-thumb-active) .thumbImageWrapper {
   border: 3px solid var(--grey-green);
+}
+
+@media (min-width: 1440px) {
+  .galleryWrapper {
+    max-width: 638px;
+    gap: 27px;
+  }
 }

@@ -16,18 +16,20 @@ export default function CardDetailsClient({ camper, reviews }: CardDetailsClient
   return (
     <div className={css.container}>
       <div className={css.wrapper}>
-        <div className={css.top}>
+        <section className={css.top}>
           <CamperGallery gallery={camper.gallery || []} camperName={camper.name} />
           <VehicleDetails camper={camper} />
-        </div>
+        </section>
 
-        <div>
+        <section className={css.bottomSection}>
           <h3 className={css.bottomTitle}>Reviews</h3>
           <div className={css.bottom}>
             <ReviewsList reviews={reviews} />
-            <BookingForm camperId={camper.id} />
+            <aside className={css.sidebar}>
+              <BookingForm camperId={camper.id} />
+            </aside>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );
