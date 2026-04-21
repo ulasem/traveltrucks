@@ -56,7 +56,7 @@ export default function Sidebar() {
               <input
                 id="location-input"
                 type="text"
-                placeholder="Kyiv, Ukraine"
+                placeholder="Lviv"
                 value={location}
                 onChange={e => setLocation(e.target.value)}
                 className={css.input}
